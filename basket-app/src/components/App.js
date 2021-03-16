@@ -2,6 +2,8 @@ import "../App.css";
 import Basket from "./Basket";
 import Groceries from "./Groceries";
 
+
+function App() {
 const groceries = [
   { id: 1, name: "Strawberry" },
   { id: 2, name: "Blueberry" },
@@ -23,7 +25,23 @@ const groceries = [
   { id: 18, name: "Pasta" },
   { id: 19, name: "Bread" },
 ];
+//add item +counter
+const [counter, setCounter] = useState({});
+function addItem(itemName) {
+  if(!counter[itemName]){
+    counter[itemName] = 1;
+  }else {
+    ++counter[itemName]
+  }
+  setState(Object.assign({},counter));
+}
+function removeItem(itemName) {
+  if(counter[itemName] === 1) {
+    delete counter[itemName];
+  }
+}
 
+}
 function App() {
   return (
     <div className="groceries-list">

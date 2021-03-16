@@ -14,8 +14,6 @@ export default class Basket extends React.Component {
             <li>{this.state.counter!==0 ? this.props.name:""}</li>
 
         </ul>
-          
-        </>
       );
     }
   }
