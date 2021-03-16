@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "../App.css";
+import Basket from "./Basket";
+import Groceries from "./Groceries";
+
+const groceries = [
+  { id: 1, name: "Strawberry" },
+  { id: 2, name: "Blueberry" },
+  { id: 3, name: "Orange" },
+  { id: 4, name: "Banana" },
+  { id: 5, name: "Apple" },
+  { id: 6, name: "Carrot" },
+  { id: 7, name: "Celery" },
+  { id: 8, name: "Mushroom" },
+  { id: 9, name: "Green Pepper" },
+  { id: 10, name: "Eggs" },
+  { id: 11, name: "Cheese" },
+  { id: 12, name: "Butter" },
+  { id: 13, name: "Chicken" },
+  { id: 14, name: "Beef" },
+  { id: 15, name: "Pork" },
+  { id: 16, name: "Fish" },
+  { id: 17, name: "Rice" },
+  { id: 18, name: "Pasta" },
+  { id: 19, name: "Bread" },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="groceries-list">
+      {groceries.map((item, index) => (
+        <Groceries key={index} name={item.name} id={item.id} />
+        ))}<br/>
+        <Basket key={index} name={item.name} id={item.id} />
     </div>
   );
 }
