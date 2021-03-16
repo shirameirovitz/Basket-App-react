@@ -1,5 +1,6 @@
 import "../App.css";
-import Groceries from "./GroceriesList";
+import BasketList from "./BasketList";
+import GroceriesList from "./GroceriesList";
 import { useState } from "react";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   ];
   //add item +counter
   const [counter, setCounter] = useState({});
+  
   function addItem(itemName) {
     if (!counter[itemName]) {
       counter[itemName] = 1;
@@ -48,7 +50,11 @@ function App() {
   return (
     <div className="list-container">
       <GroceriesList groceries={groceries} addItem={addItem} />
-      <BasketList key={index} name={item.name} id={item.id} />
+      <BasketList
+        items={counter}
+        removeItem={removeItem}
+        removeAll={removeAll}
+      />
     </div>
   );
 }
