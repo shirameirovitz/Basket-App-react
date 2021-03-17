@@ -68,11 +68,7 @@ function App() {
         value={searchTerm}
         onChange={handleChange}
       />
-      {/* <ul>
-        {searchResults.filter((item) => (
-          <li>{item}</li>
-        ))}
-      </ul> */}
+
       <GroceriesList groceries={searchResults} addItem={addItem} />
       <BasketList
         items={counter}
